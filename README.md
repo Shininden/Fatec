@@ -1,2 +1,2 @@
 # Fatec
- Algorithms made made durinn Fatec's classes
+ Algorithms made during Fatec's classes
