@@ -16,6 +16,7 @@ public class Lista4_27
 
         for(int j = 0; j < nums.length; j++)
         {
+
             if(ePrimo(nums[j]))
                 System.out.println("The number " + nums[j] + " is prime and it's in the position " + (j+1));
                 
