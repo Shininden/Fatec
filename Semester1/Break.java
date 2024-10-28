@@ -8,7 +8,8 @@ public class Break
 
     public static void main(String[] args)
     {
-        secondWay();
+        //secondWay();
+        firstWay();
     }
 
     static void firstWay()
