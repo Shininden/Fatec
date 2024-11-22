@@ -22,9 +22,7 @@ public class ValidacaoIdade
 
         try
         {
-            if(idade < 18 || idade > 65){
-                throw new InvalidAgeException("Idade inválida");
-            }
+            validarIdade(idade);
             System.out.println("Idade valida");
         }
         catch (InvalidAgeException e) {
@@ -34,5 +32,11 @@ public class ValidacaoIdade
             System.out.println("Programa encerrado");
         }
         sc.close();
+    }
+
+    public static void validarIdade(int idade) throws InvalidAgeException {
+        if (idade < 18 || idade > 65) {
+            throw new InvalidAgeException("Idade fora do limite permitido (18 a 65 anos).");
+        }
     }
 }

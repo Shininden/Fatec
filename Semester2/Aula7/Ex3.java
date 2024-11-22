@@ -60,6 +60,7 @@ public class Ex3
     {
         int[] vetB = new int[4];
         int[] vetC = new int[vetB.length];
+        @SuppressWarnings("unused")
         int soma = 0;
         System.out.println("Type 5 value");
 

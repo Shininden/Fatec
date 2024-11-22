@@ -10,6 +10,7 @@ public class JurosCompostos
 {
     public static void main(String[] args)
     {
+        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
         double principal = 0;
         double taxa = 0;

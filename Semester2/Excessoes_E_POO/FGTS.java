@@ -7,6 +7,7 @@ public class FGTS
 {
     public static void main(String[] args) throws InterruptedException
     {
+        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
         boolean isNameValid = false;
         boolean isSalaryValid = false;
@@ -31,6 +32,12 @@ public class FGTS
 
                 else if(nome.length() < 5 || nome.length() > 50){
                     throw new IllegalArgumentException();
+                }
+                else
+                {
+                    if(nome.endsWith(" ")){
+                        throw new IllegalArgumentException();
+                    }
                 }
 
                 isNameValid = true;
