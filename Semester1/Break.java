@@ -1,4 +1,6 @@
 package Semester1;
+import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 
 public class Break
@@ -9,7 +11,7 @@ public class Break
     public static void main(String[] args)
     {
         //secondWay();
-        firstWay();
+        //firstWay();
     }
 
     static void firstWay()
