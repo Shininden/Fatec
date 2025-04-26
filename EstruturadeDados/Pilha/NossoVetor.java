@@ -79,7 +79,7 @@ public class NossoVetor
         throw new ElementoNaoEncontradoException("elemento nao encontrado");
     }
 
-    public void AutoPreencheVetor() 
+    public void autoPreencheVetor() 
     {
         Random random = new Random();
 
@@ -90,7 +90,8 @@ public class NossoVetor
         ocupacao = vetor.length;
     }
 
-    public void bubbleSort() 
+    public void bubbleSort() /* Vai sempre tentar pegar o maior n° que achar e arrastar até onde der, 
+                            não se importanto com a ordem deixada pra trás*/ 
     {
         for (int i = 1; i < vetor.length; i++)
         {
@@ -105,28 +106,40 @@ public class NossoVetor
             }
         }
     }
-    public void insertionSort() 
+    public void insertionSort() /*Vai reajustando a ordem conforme novos elementos são adicionados, 
+                                quando ele encontra um elemento que disrupts a ordem até então estabelecida, 
+                                ele volta pra reajustar*/
     {
-        for (int j = 1; j < vetor.length; ++j) 
+        for (int j = 1; j < vetor.length; j++) 
         {
-            int x = vetor[j];
+            int valueHolder = vetor[j];
             int i;
 
-            for (i = j - 1; i >= 0 && vetor[i] > x; --i){
+            for (i = j - 1;   i >= 0 && vetor[i] > valueHolder;   i--){
                 vetor[i + 1] = vetor[i];
             }
                 
-            vetor[i + 1] = x;
+            vetor[i + 1] = valueHolder;
         }
     }
-    private int partition(int p, int r) 
+    public void quickSort(int primeiro, int ultimo) 
+    {
+        if (primeiro < ultimo) 
+        { 
+            int q = partition(primeiro, ultimo);
+
+            quickSort(primeiro, q-1);
+            quickSort(q+1, ultimo);
+        }
+    }
+    private int partition(int primeiro, int ultimo) 
     { 
-        int x = vetor[r];     //o pivô é o último elemento da partição considerada do vetor
-        int i = p - 1;
+        int pivo = vetor[ultimo];     //o pivô é o último elemento da partição considerada do vetor
+        int i = primeiro - 1;
         
-        for(int j = p; j < r; j++)
+        for(int j = primeiro; j < ultimo; j++)
         {
-            if (vetor[j] <= x) 
+            if (vetor[j] <= pivo) 
             {
                 i++;
                 int aux = vetor[i];
@@ -136,22 +149,13 @@ public class NossoVetor
         }
         i++;
 
-        int aux = vetor[r]; 
-        vetor[r] = vetor[i]; 
+        int aux = vetor[ultimo]; 
+        vetor[ultimo] = vetor[i]; 
         vetor[i] = aux;
 
         return i;
     }
-    public void quickSort(int p, int r) 
-    {
-        if (p < r ) 
-        { 
-            int q = partition(p, r);
 
-            quickSort(p, q-1);
-            quickSort(q+1, r);
-        }
-    }
 
     public char[] divide_Odds(NossoVetor pilha) {
         throw new UnsupportedOperationException("Unimplemented method 'divide_Odds'");

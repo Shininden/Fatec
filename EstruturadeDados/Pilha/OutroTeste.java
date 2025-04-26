@@ -7,7 +7,7 @@ public class OutroTeste
     public static void main(String[] args) 
     {
         NossoVetor v = new NossoVetor(6);
-        Random random = new Random();
+        /*Random random = new Random();
 
         for (int i = 1; i <= 100; i++) 
         {
@@ -34,6 +34,16 @@ public class OutroTeste
         }
         catch (RuntimeException e) {
             System.out.println(e.getMessage());
-        }
+        }*/
+
+        v.inserir(14);
+        v.inserir(2);
+        v.inserir(10);
+        v.inserir(47);
+        v.inserir(-1);
+        v.inserir(0);
+        System.out.println(v.toString());
+        v.insertionSort();
+        System.out.println(v.toString());
     }
 }

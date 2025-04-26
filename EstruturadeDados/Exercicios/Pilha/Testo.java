@@ -1,4 +1,4 @@
-package Fatec.EstruturadeDados.Exercicios.Pilha;
+package Pilha;
 
 import Fatec.EstruturadeDados.Pilha.NossoVetor;
 

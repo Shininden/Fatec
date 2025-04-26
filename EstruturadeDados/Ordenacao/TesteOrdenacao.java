@@ -29,7 +29,7 @@ public class TesteOrdenacao {
             // fim = new Date().getTime();
             // System.out.println("insertion demorou " + (fim - ini) + " milissegundos");
 
-            v.AutoPreencheVetor();
+            v.autoPreencheVetor();
             ini = new Date().getTime();
             v.quickSort(0, v.getTamanho()-1);
             fim = new Date().getTime();
